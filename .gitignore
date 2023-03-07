@@ -1,0 +1,8 @@
+# editors
+*.swp
+*~
+.vscode
+# build
+/build*/
+boards/rv32m1_vega_ri5cy.overlay
+peripheral.code-workspace

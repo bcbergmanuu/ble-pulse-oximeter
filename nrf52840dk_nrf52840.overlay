@@ -1,0 +1,36 @@
+/ {
+    chosen {
+        // zephyr,console = &usb_cdc_acm_uart;
+        // zephyr,shell-uart = &usb_cdc_acm_uart;
+    };
+	zephyr,user {
+        signal-gpios = <&gpio0 20 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+    };
+};
+
+
+// zephyr_udc0: &usbd {
+// 	compatible = "nordic,nrf-usbd";
+// 	status = "okay";
+
+// 	usb_cdc_acm_uart: cdc-acm-uart {
+// 		compatible = "zephyr,cdc-acm-uart";
+// 	};
+// };
+
+&pinctrl {
+	i2c0_default: i2c0_default {
+		group1 {
+			psels = <NRF_PSEL(TWIM_SDA, 0,29)>,
+				<NRF_PSEL(TWIM_SCL, 0, 31)>;
+		};
+	};
+
+	i2c0_sleep: i2c0_sleep {
+		group1 {
+			psels = <NRF_PSEL(TWIM_SDA, 0, 29)>,
+				<NRF_PSEL(TWIM_SCL, 0, 31)>;
+			low-power-enable;
+		};
+	};
+};

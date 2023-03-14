@@ -3,8 +3,11 @@
         // zephyr,console = &usb_cdc_acm_uart;
         // zephyr,shell-uart = &usb_cdc_acm_uart;
     };
+	aliases {
+		i2cdevice = &i2c0;
+	};
 	zephyr,user {
-        signal-gpios = <&gpio0 20 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+        signal-gpios = <&gpio0 27 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
     };
 };
 

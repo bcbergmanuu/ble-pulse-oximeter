@@ -137,7 +137,8 @@ int max30102_init()
 	uint8_t mode_cfg;
 
 	/* Get the I2C device */	
-	i2c = DEVICE_DT_GET(DT_NODELABEL(i2c1));
+	i2c = DEVICE_DT_GET(DT_ALIAS(i2cdevice));
+	//i2c = DEVICE_DT_GET(DT_NODELABEL(i2c1));
 	__ASSERT(device_is_ready(i2c), "max30102 device not ready");		
 
 	/* Check the part id to make sure this is MAX30102 */

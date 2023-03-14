@@ -1,15 +1,6 @@
-#include <string.h>
+
 #include <stdio.h>
-
 #include <zephyr/types.h>
-#include <stddef.h>
-#include <sys/types.h>
-#include <errno.h>
-#include <zephyr/kernel.h>
-
-#include <zephyr/settings/settings.h>
-
-#include <zephyr/logging/log.h>
 
 #define MAX30102_REG_INT_STS1		0x00
 #define MAX30102_REG_INT_STS2		0x01
